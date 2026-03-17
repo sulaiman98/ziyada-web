@@ -2,14 +2,6 @@
 
 Landing page for [Ziyada](https://ziyada.app), an Islamic learning app for daily growth through short lessons and quizzes.
 
-## Pages
-
-| File | Description |
-|------|-------------|
-| `ziyada.html` | Main landing page |
-| `privacy.html` | Privacy Policy |
-| `terms.html` | Terms of Use |
-
 ## Structure
 
 ```
