@@ -279,7 +279,6 @@
           btn.style.background = 'linear-gradient(135deg, #2A7D64, #1B5E4B)';
           input.value = '';
           input.placeholder = 'Jazakallah khair! 🌙';
-          input.disabled = false;
           note.textContent = "You're on the list! We'll be in touch soon. 🌙";
         } else {
           throw new Error('server error');
@@ -346,12 +345,10 @@
           body: JSON.stringify({ email, message: why })
         });
         if (res.ok) {
-          btn.textContent = '✓ Check your inbox!';
+          btn.textContent = '✓ You\'re in the beta!';
           btn.style.background = 'linear-gradient(135deg, #2A7D64, #1B5E4B)';
           emailIn.value = '';
           whyIn.value = '';
-          emailIn.disabled = false;
-          whyIn.disabled = false;
           note.textContent = 'You\'re in! The TestFlight link is on its way. 🌙';
         } else {
           throw new Error('server error');
