@@ -1,4 +1,19 @@
 /* ── POLICY PAGES (privacy + terms) ── */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+  text-decoration: none;
+  margin-bottom: 24px;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.back-btn:hover { opacity: 1; }
+
 .policy-hero {
   position: relative;
   z-index: 1;
