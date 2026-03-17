@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Use – Ziyada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/policy.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="ziyada.html">
+    <div class="logo-mark">
+      <img src="images/icon-dark.png" alt="Ziyada" class="icon-dark" />
+      <img src="images/icon-light.png" alt="Ziyada" class="icon-light" />
+    </div>
+    <span class="logo-text">Ziyada</span>
+  </a>
+  <div class="nav-cta">
+    <a class="btn-ghost" href="ziyada.html#features">Features</a>
+    <a class="btn-ghost" href="ziyada.html#how">How it works</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+    <a class="btn-gold" href="ziyada.html#waitlist">Join Waitlist</a>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="policy-hero">
+  <div class="section-label">Legal</div>
+  <h1>Terms of Use</h1>
+  <p class="policy-meta">Effective Date: March 17, 2026</p>
+</div>
+
+<!-- TERMS CONTENT -->
+<div class="policy-body">
+
+  <div class="policy-section">
+    <div class="policy-highlight">
+      <p>Welcome to Ziyada. By using the Ziyada mobile application ("App"), you agree to the following Terms of Use. Please read them carefully.</p>
+    </div>
+  </div>
+
+  <div class="policy-section">
+    <h2><span class="num">01</span> Use of the App</h2>
+    <p>Ziyada is a learning app designed to provide Islamic educational content through lessons and quizzes.</p>
+    <p>You agree to use the App:</p>
+    <ul>
+      <li>For personal, non-commercial purposes</li>
+      <li>In a lawful and respectful manner</li>
+      <li>Without attempting to misuse, disrupt, or harm the App</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2><span class="num">02</span> No Account Required</h2>
+    <p>Ziyada does not require account creation.</p>
+    <ul>
+      <li>Your data is stored locally on your device</li>
+      <li>You are responsible for maintaining access to your device</li>
+    </ul>
+    <p>We are not responsible for loss of data due to app deletion or device changes.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2><span class="num">03</span> Content Disclaimer</h2>
+    <p>Ziyada aims to provide beneficial and reliable Islamic knowledge.</p>
+    <p>However:</p>
+    <ul>
+      <li>Content is for educational purposes only</li>
+      <li>We do not guarantee completeness or absolute accuracy</li>
+      <li>Users are encouraged to seek further knowledge from qualified scholars where necessary</li>
+    </ul>
+  </div>
+
+  <div class="policy-section">
+    <h2><span class="num">04</span> Intellectual Property</h2>
+    <p>All content in the App, including text, questions, design, and branding, is owned by Ziyada unless otherwise stated.</p>
+    <p>You may not copy, distribute, or reproduce content without permission.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2><span class="num">05</span> Limitation of Liability</h2>
+    <p>Ziyada is provided "as is" without warranties of any kind.</p>
+    <p>We are not liable for:</p>
+    <ul>
+      <li>Any errors or omissions in content</li>
+      <li>Any loss of data</li>
+      <li>Any damages resulting from use of the App</li>
+    </ul>
+    <p>Use the App at your own discretion.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2><span class="num">06</span> Updates and Changes</h2>
+    <p>We may update or improve the App at any time.</p>
+    <p>We may also update these Terms of Use. Continued use of the App means you accept any changes.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2><span class="num">07</span> Termination</h2>
+    <p>We reserve the right to restrict or stop access to the App if misuse is detected.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2><span class="num">08</span> Governing Law</h2>
+    <p>These Terms are governed by applicable laws in your jurisdiction.</p>
+  </div>
+
+  <div class="policy-section">
+    <h2><span class="num">09</span> Contact</h2>
+    <p>If you have any questions about these Terms, contact:</p>
+    <a class="policy-contact" href="mailto:privacy@ziyada.app">✉ privacy@ziyada.app</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <div class="logo-mark" style="width:28px;height:28px;border-radius:8px;">
+      <img src="images/icon-dark.png" alt="Ziyada" class="icon-dark" />
+      <img src="images/icon-light.png" alt="Ziyada" class="icon-light" />
+    </div>
+    <span class="logo-text" style="font-size:1rem;">Ziyada</span>
+    <span class="footer-copy" style="margin-left:8px;">· © 2026 All rights reserved.</span>
+  </div>
+  <div class="footer-links">
+    <a class="footer-link" href="privacy.html">Privacy Policy</a>
+    <a class="footer-link" href="terms.html">Terms</a>
+    <a class="footer-link" href="#">Contact</a>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  (function() {
+    const html = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    const stored = localStorage.getItem('ziyada-theme');
+
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        html.classList.add('light');
+        toggle.textContent = '☀️';
+      } else {
+        html.classList.remove('light');
+        toggle.textContent = '🌙';
+      }
+    }
+
+    if (stored) {
+      applyTheme(stored);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      applyTheme('light');
+    }
+
+    toggle.addEventListener('click', function() {
+      const isLight = html.classList.contains('light');
+      const next = isLight ? 'dark' : 'light';
+      localStorage.setItem('ziyada-theme', next);
+      applyTheme(next);
+    });
+  })();
+</script>
+
+</body>
+</html>
