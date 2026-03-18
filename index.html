@@ -187,9 +187,19 @@
     <p class="waitlist-desc">Be among the first to access Ziyada. Join the waitlist today and get early access when we launch.</p>
 
     <form class="waitlist-form" id="waitlistForm" novalidate>
-      <input class="waitlist-input" id="waitlistEmail" type="email" placeholder="your@email.com" autocomplete="email" />
+      <div class="waitlist-input-group">
+        <input class="waitlist-input" id="waitlistEmail" type="email" placeholder="your@email.com" autocomplete="email" />
+        <div class="waitlist-device">
+          <span class="waitlist-device-label">Your device</span>
+          <div class="device-picker">
+            <label class="device-option"><input type="radio" name="waitlistDevice" value="iOS"> 📱 iPhone</label>
+            <label class="device-option"><input type="radio" name="waitlistDevice" value="Android"> 🤖 Android</label>
+          </div>
+        </div>
+      </div>
       <button class="btn-primary" type="submit" id="waitlistBtn">Join Waitlist</button>
     </form>
+   
     <p class="waitlist-note" id="waitlistNote">No spam. Unsubscribe anytime. Launching soon, in sha Allah.</p>
   </div>
 </div>
@@ -210,6 +220,7 @@
       <div class="modal-perk"><span class="perk-icon">💬</span><span>Shape the app with your early feedback</span></div>
       <div class="modal-perk"><span class="perk-icon">♾️</span><span>Free forever for beta testers</span></div>
     </div>
+    <p class="beta-notice">🍎 Beta testing is currently only available for iPhone.</p>
 
     <form id="betaForm" novalidate>
       <div class="modal-field">
@@ -219,6 +230,13 @@
       <div class="modal-field">
         <label class="modal-label" for="betaWhy">Why do you want to beta test Ziyada?</label>
         <textarea class="waitlist-input modal-textarea" id="betaWhy" placeholder="Tell us why you want to join the beta..." rows="3"></textarea>
+      </div>
+      <div class="modal-field">
+        <label class="modal-label">Your device</label>
+        <div class="device-picker">
+          <label class="device-option"><input type="radio" name="betaDevice" value="iOS" checked> 📱 iPhone</label>
+          <label class="device-option device-option--disabled"><input type="radio" name="betaDevice" value="Android" disabled> 🤖 Android <span class="coming-soon">coming soon</span></label>
+        </div>
       </div>
       <button class="btn-primary modal-submit" type="submit" id="betaBtn">Send Me the TestFlight Link</button>
       <p class="waitlist-note" id="betaNote" style="margin-top:12px;">No spam. We'll only send you the TestFlight link.</p>
@@ -254,9 +272,18 @@
       e.preventDefault();
 
       const email = input.value.trim();
+      const device = (document.querySelector('input[name="waitlistDevice"]:checked') || {}).value;
+
       if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         input.style.borderColor = '#C06040';
         setTimeout(() => input.style.borderColor = '', 1500);
+        return;
+      }
+
+      if (!device) {
+        note.style.color = '#C06040';
+        note.textContent = 'Please select your device before joining.';
+        setTimeout(() => { note.style.color = ''; note.textContent = 'No spam. Unsubscribe anytime. Launching soon, in sha Allah.'; }, 2500);
         return;
       }
 
@@ -271,7 +298,7 @@
         const res = await fetch('https://formspree.io/f/xkoqpqkb', {
           method: 'POST',
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
+          body: JSON.stringify({ email, device: device })
         });
 
         if (res.ok) {
@@ -343,7 +370,7 @@
         const res = await fetch('https://formspree.io/f/xojkpkrj', {
           method: 'POST',
           headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, message: why })
+          body: JSON.stringify({ email, message: why, device: (document.querySelector('input[name="betaDevice"]:checked') || {}).value || 'Not specified' })
         });
         if (res.ok) {
           btn.textContent = '✓ You\'re in the beta!';
