@@ -20,6 +20,6 @@ ziyada-web/
 ## Features
 
 - Dark / light mode with localStorage persistence
-- Waitlist form → [Formspree](https://formspree.io) (`mwvrweea`)
-- Beta sign-up modal → Formspree (`xojkpaew`)
+- Waitlist form → [Formspree](https://formspree.io) (`xkoqpqkb`)
+- Beta sign-up modal → Formspree (`xojkpkrj`)
 - Fully static — no build step required

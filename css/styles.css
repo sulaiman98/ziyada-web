@@ -336,7 +336,8 @@ nav {
 
 .phone-wrap {
   position: relative;
-  width: 280px;
+  width: 400px;
+  max-width: 100%;
 }
 
 .phone-wrap::before {
@@ -349,12 +350,9 @@ nav {
 
 .phone-screenshot {
   width: 100%;
-  border-radius: 32px;
   display: block;
   position: relative;
-  box-shadow:
-    0 40px 80px rgba(0,0,0,0.5),
-    0 0 0 1px rgba(255,255,255,0.05);
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.35));
 }
 
 .phone-screenshot.light-img { display: none; }
@@ -532,6 +530,15 @@ nav {
   font-weight: 600;
   color: var(--text);
   line-height: 1.3;
+}
+
+.cat-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
 }
 
 .cats-more {
@@ -801,12 +808,8 @@ footer {
 
 /* ── LIGHT MODE OVERRIDES ── */
 .light .phone-screenshot {
-  box-shadow:
-    0 40px 80px rgba(0,0,0,0.15),
-    0 0 0 1px rgba(0,0,0,0.05);
+  filter: drop-shadow(0 30px 40px rgba(0,0,0,0.18));
 }
-.light .phone-screenshot.light-img { display: block; }
-.light .phone-screenshot.dark-img  { display: none; }
 
 .light .quiz-card {
   background: linear-gradient(135deg, #2A2A20, #3A3A30);
