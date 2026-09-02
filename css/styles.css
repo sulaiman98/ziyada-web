@@ -142,6 +142,9 @@ nav {
   cursor: pointer;
   transition: opacity 0.2s, transform 0.2s;
   text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 .btn-gold:hover { opacity: 0.9; transform: translateY(-1px); }
 
@@ -703,51 +706,6 @@ nav {
   color: var(--muted);
 }
 
-.device-picker {
-  display: flex;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.waitlist-device {
-  display: flex;
-  align-items: center;
-  align-self: center;
-  gap: 16px;
-}
-.waitlist-device-label {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.85rem;
-  color: var(--muted);
-  white-space: nowrap;
-}
-.waitlist-device .device-picker {
-  margin-top: 0;
-}
-.device-option {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.78rem;
-  color: var(--muted);
-  padding: 5px 12px;
-  border: 1.5px solid var(--border);
-  border-radius: 100px;
-  transition: all 0.2s;
-  user-select: none;
-  white-space: nowrap;
-}
-.device-option input[type="radio"] {
-  display: none;
-}
-.device-option:has(input:checked) {
-  border-color: var(--primary);
-  color: var(--primary);
-  background: var(--primary-dim);
-}
-
 /* ── FOOTER ── */
 footer {
   position: relative;
@@ -845,8 +803,8 @@ footer {
   .nav-cta .btn-ghost { display: none; }
   .btn-gold { font-size: 0.8rem; padding: 9px 16px; }
   .hero { flex-direction: column; padding: 100px 24px 60px; text-align: center; align-items: center; }
+  .hero-desc { margin-left: auto; margin-right: auto; }
   .hero-actions { justify-content: center; }
-  .hero-trust { justify-content: center; }
   .section { padding: 60px 24px; }
   .trust-bar { padding: 0 24px 60px; }
   .features-grid { grid-template-columns: 1fr; }
@@ -855,7 +813,7 @@ footer {
   .steps::before { display: none; }
   .waitlist-section { padding: 0 24px 80px; }
   .waitlist-card { padding: 48px 24px; }
-  .waitlist-form { flex-direction: column; }
+  .waitlist-form { flex-direction: column; align-items: stretch; }
   .waitlist-form .btn-primary { width: 100%; justify-content: center; }
   footer { flex-direction: column; gap: 20px; text-align: center; padding: 32px 24px; }
 }
